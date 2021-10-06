@@ -6,13 +6,14 @@ interface Props{
 }
 
 export default function Tile({number, image}: Props){
+//Adding the chequerboard to the board and the pieces (If image is not null)
     if(number % 2 === 0){
         return<div className="tile black-tile">
-            <img src={image}></img>
+            {image && <div style={{backgroundImage: `url(${image})`}} className="chess-piece"></div>}
         </div>
     }else{
         return<div className="tile white-tile">
-            <img src={image}></img>
+            {image && <div style={{backgroundImage: `url(${image})`}} className="chess-piece"></div>}
         </div>
     }
 }
